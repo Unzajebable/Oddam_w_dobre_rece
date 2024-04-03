@@ -10,7 +10,7 @@
 					<li><a href="{% url 'register' %}" class="btn btn--small btn--highlighted">Załóż konto</a></li>
 				{% else %}
 					<li class="logged-user">
-						Witaj {{user.username}}
+						Witaj {{user.first_name}}
 						<ul class="dropdown">
 							<li><a href="#">Profil</a></li>
 							<li><a href="#">Moje zbiórki</a></li>
@@ -83,7 +83,7 @@
 		<div class="form--steps-container">
 			<div class="form--steps-counter">Krok <span>1</span>/5</div>
 
-			<form action="form-confirmation.html" method="post">
+			<form action="" method="post">
 				<!-- STEP 1: class .active is switching steps -->
 				<div data-step="1" class="active">
 					<h3>Zaznacz co chcesz oddać:</h3>

@@ -17,5 +17,5 @@ urlpatterns = [
     path('accounts/login/', LoginView, name='login'),
     path('accounts/register/', RegisterView, name='register'),
     path('add-donation/', AddDonationView, name='add-donation'),
-    path('conf-temp/', FormConfirmTemp, name='conf-temp'), # temp url
+    path('conf-temp/', FormConfirmTemp, name='conf-temp'), # temp url tbd
 ]
