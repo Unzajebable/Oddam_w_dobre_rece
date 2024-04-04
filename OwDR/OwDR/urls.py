@@ -5,17 +5,19 @@ from django.contrib.admin.views.decorators import staff_member_required
 from OwDR_app.views import (
     IndexView,
     AddDonationView,
+    AddUserView,
     LoginView,
-    RegisterView,
-    FormConfirmTemp,
+    LogoutView,
+    FormConfirm,
 )
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),   # landing page
-    path('accounts/login/', LoginView, name='login'),
-    path('accounts/register/', RegisterView, name='register'),
-    path('add-donation/', AddDonationView, name='add-donation'),
-    path('conf-temp/', FormConfirmTemp, name='conf-temp'), # temp url tbd
+    path('accounts/login/', LoginView.as_view(), name='login'),
+    path('accounts/register/', AddUserView.as_view(), name='register'),
+    path('accounts/logout/', LogoutView.as_view(), name='logout'),
+    path('add-donation/', login_required(AddDonationView), name='add-donation'),
+    path('donation-confirmation/', login_required(FormConfirm), name='dono-conf'),
 ]
