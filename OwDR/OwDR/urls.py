@@ -13,7 +13,7 @@ from OwDR_app.views import (
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('', IndexView.as_view(), name='index'),   # landing page
     path('accounts/login/', LoginView.as_view(), name='login'),
     path('accounts/register/', AddUserView.as_view(), name='register'),
